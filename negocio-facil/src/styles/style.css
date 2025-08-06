@@ -118,11 +118,16 @@ canvas {
 
 /* === AUTH STYLES === */
 #auth-container {
+  position: fixed; /* ocupa toda la ventana */
+  top: 0;
+  left: 0;
+  width: 100vw; /* ancho completo */
+  height: 100vh; /* alto completo */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #f4f6f8;
+  justify-content: center; /* centra horizontal */
+  align-items: center; /* centra vertical */
+  background: #f4f6f8; /* fondo gris claro */
+  z-index: 999; /* encima de todo */
 }
 
 .auth-box {
@@ -131,7 +136,7 @@ canvas {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px;
+  width: 350px; /* ancho fijo */
 }
 
 .auth-box h2 {
@@ -166,4 +171,18 @@ canvas {
 #message {
   margin-top: 1rem;
   font-size: 0.9rem;
+}
+
+canvas {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  width: 100% !important;
+  max-height: 400px; /* 👈 fuerza altura */
+}
+
+.charts canvas {
+  width: 100% !important;
+  height: 300px !important; /* 👈 fuerza altura para que siempre pinte */
 }

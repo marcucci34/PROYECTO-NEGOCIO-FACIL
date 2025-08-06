@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Negocio Fácil</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script type="module" src="firebase-config.js"></script>
-  <script type="module" src="js/app.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Negocio Fácil</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="./firebase-config.js"></script>
+    <script type="module" src="./js/app.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- Contenedor de Login/Registro -->
+    <div id="auth-container">
+      <div class="auth-box">
+        <h2 id="auth-title">Iniciar Sesión</h2>
 
- 
+        <input type="email" id="email" placeholder="Correo electrónico" />
+        <input type="password" id="password" placeholder="Contraseña" />
 
-  <!-- Dashboard (oculto al inicio) -->
-  <!-- style="display: none;" -->
-  <div id="dashboard">
-    <div class="container">
-      <aside class="sidebar">
-        <div class="logo">
-          <img src="assets/image.svg" alt="Logo" />
-          <h2>menu</h2>
-        </div>
-        <nav>
-          <ul>
-            <li class="active">Pedidos</li>
-            <li>Citas</li>
-            <li>Clientes</li>
-            <li>Análisis</li>
-          </ul>
-        </nav>
-      </aside>
-      <main class="dashboard">
-        <h1>Análisis</h1>
-        <div class="stats">
-          <div class="stat">810<br><small>ordenes</small></div>
-          <div class="stat">230<br><small>Citas</small></div>
-          <div class="stat">56<br><small>Clientes</small></div>
-          <div class="stat">$254,800<br><small>Ingresos</small></div>
-        </div>
-        <div class="charts">
-          <canvas id="pedidosCitasChart"></canvas>
-          <canvas id="ingresosChart"></canvas>
-        </div>
-      </main>
+        <button id="btn-login">Iniciar Sesión</button>
+        <button id="btn-register">Registrarse</button>
+
+        <p id="message"></p>
+      </div>
     </div>
-  </div>
 
-</body>
+    <!-- Dashboard (oculto al inicio) -->
+    <div id="dashboard" style="display: none">
+      <div class="container">
+        <aside class="sidebar">
+          <div class="logo">
+            <img src="assets/image.svg" alt="Logo" />
+            <h2>Menu</h2>
+          </div>
+          <nav>
+            <ul>
+              <li class="active">Pedidos</li>
+              <li>Citas</li>
+              <li>Clientes</li>
+              <li>Análisis</li>
+            </ul>
+          </nav>
+        </aside>
+        <main class="dashboard">
+          <h1>Análisis</h1>
+          <div class="stats">
+            <div class="stat">810<br /><small>ordenes</small></div>
+            <div class="stat">230<br /><small>Citas</small></div>
+            <div class="stat">56<br /><small>Clientes</small></div>
+            <div class="stat">$254,800<br /><small>Ingresos</small></div>
+          </div>
+          <div class="charts">
+            <canvas id="pedidosCitasChart"></canvas>
+            <canvas id="ingresosChart"></canvas>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
 </html>
